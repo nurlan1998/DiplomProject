@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/fragment_set_profile_image_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="4dp"
+            android:scaleType="center"
+            android:padding="1.2dp"
+            android:background="@drawable/border_photo"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_set_profile_form_full_name"
+            style="@style/CustomFormEditText"
+            android:layout_marginTop="20dp"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:helperText="@string/helper_name"
+            android:hint="@string/hint_full_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_set_profile_edit_text_full_name"
+                style="@style/CustomEditText"
+                android:imeOptions="actionDone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_set_profile_form_name"
+            style="@style/CustomFormEditText"
+            android:layout_marginTop="10dp"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:helperText="@string/helper_name"
+            android:hint="@string/hint_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_set_profile_edit_text_name"
+                style="@style/CustomEditText"
+                android:digits="@string/digit_english_num"
+                android:imeOptions="actionDone|flagForceAscii"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_set_profile_form_sex"
+            style="@style/CustomFormSpinner"
+            android:layout_marginTop="10dp"
+            android:hint="@string/hint_sex">
+
+            <AutoCompleteTextView
+                style="@style/CustomSpinner"
+                android:id="@+id/fragment_set_profile_edit_text_sex"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_set_profile_form_city"
+            style="@style/CustomFormSpinner"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:hint="@string/hint_city">
+
+            <AutoCompleteTextView
+                android:id="@+id/fragment_set_profile_edit_text_city"
+                style="@style/CustomEditText"
+                android:background="@null"
+                android:imeOptions="actionDone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_set_profile_form_birthday"
+            style="@style/CustomFormSpinner"
+            android:layout_marginTop="10dp"
+            app:endIconDrawable="@drawable/ic_calendar"
+            app:endIconMode="custom"
+            app:counterEnabled="true"
+            android:hint="@string/hint_birthday">
+
+            <AutoCompleteTextView
+                android:id="@+id/fragment_set_profile_edit_text_birthday"
+                style="@style/CustomEditText"
+                android:imeOptions="actionDone"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_set_profile_button_sign_in"
+            style="@style/CustomButton"
+            android:layout_marginTop="10dp"
+            android:text="@string/text_sign_in"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_set_profile_view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:background="@color/colorBackgroundAlpha30">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

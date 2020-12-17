@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DiplomProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="helper_name">Не менее 3 символов</string>
+
+    <string name="hint_name">Ник</string>
+    <string name="hint_full_name">Имя</string>
+    <string name="hint_sex">Пол</string>
+    <string name="hint_city">Город</string>
+    <string name="hint_address">Адресс</string>
+    <string name="hint_birthday">Дата рождения</string>
+    <string name="hint_description">Описание</string>
+
+    <string name="digit_english_num">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_</string>
+
+    <string name="text_sign_in">Зарегистрироваться</string>
+</resources>
