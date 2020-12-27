@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_graph"
+    app:startDestination="@id/userTypeFragment">
+
+    <fragment
+        android:id="@+id/userTypeFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.UserTypeFragment"
+        android:label="fragment_user_type"
+        tools:layout="@layout/fragment_user_type" >
+        <action
+            android:id="@+id/action_userTypeFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_authFragment_to_setProfileFragment"
+            app:destination="@id/setProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setProfileFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.SetProfileFragment"
+        android:label="SetProfileFragment" >
+        <action
+            android:id="@+id/action_setProfileFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

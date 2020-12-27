@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/claimsTypeFragment">
+
+    <fragment
+        android:id="@+id/selectAtsFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.create_claims.SelectAtsFragment"
+        android:label="fragment_categorie"
+        tools:layout="@layout/fragment_ats" >
+        <action
+            android:id="@+id/action_selectAtsFragment_to_createClaimsFragment2"
+            app:destination="@id/createClaimsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/claimsFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.claims.ClaimsFragment"
+        android:label="fragment_claims"
+        tools:layout="@layout/fragment_claims" />
+    <fragment
+        android:id="@+id/claimsTypeFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.create_claims.ClaimsTypeFragment"
+        android:label="fragment_claims_type"
+        tools:layout="@layout/fragment_claims_type" >
+        <action
+            android:id="@+id/action_claimsTypeFragment_to_selectAtsFragment"
+            app:destination="@id/selectAtsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createClaimsFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.create_claims.CreateClaimsFragment"
+        android:label="fragment_create_claims"
+        tools:layout="@layout/fragment_create_claims" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

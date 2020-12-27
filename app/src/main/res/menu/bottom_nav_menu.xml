@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/claimsFragment"
+        android:icon="@drawable/ic_claims_24"
+        android:title="Заявки"/>
+    <item
+        android:id="@+id/claimsTypeFragment"
+        android:icon="@drawable/ic_claims_add_24"
+        android:title="Создать заявку"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/icon_profile"
+        android:title="Профиль"/>
+
+</menu>

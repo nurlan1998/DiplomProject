@@ -1,12 +1,10 @@
 package com.nurlan.diplomproject.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nurlan.diplomproject.R
 import com.nurlan.diplomproject.data.models.CategoriesData
-
+import com.nurlan.diplomproject.databinding.ItemAtsBinding
 
 class CategoriesAdapter: RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
 
@@ -17,8 +15,8 @@ class CategoriesAdapter: RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHo
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.item_categories,parent,false)
-        return CategoriesViewHolder(view)
+        var binding = ItemAtsBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return CategoriesViewHolder(binding)
     }
 
     override fun getItemCount(): Int = models.size
@@ -27,9 +25,12 @@ class CategoriesAdapter: RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHo
         holder.bind(models[position])
     }
 
-    inner class CategoriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun bind(categoriesData: CategoriesData){
+    inner class CategoriesViewHolder(binding: ItemAtsBinding): RecyclerView.ViewHolder(binding.root){
 
+        val name = binding.tvAtsName
+
+        fun bind(categoriesData: CategoriesData){
+            name.text = categoriesData.ats
         }
     }
 }
