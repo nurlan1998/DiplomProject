@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 class ProfileViewModel(var repository: Repository): ViewModel() {
     val citiesLiveData: MutableLiveData<List<CitiesData>> = MutableLiveData()
 
-    suspend fun getAllCities() = withContext(Dispatchers.IO) {
+    fun getAllCities() = viewModelScope.launch {
         val cities = repository.getAllCities()
             citiesLiveData.value = cities
     }

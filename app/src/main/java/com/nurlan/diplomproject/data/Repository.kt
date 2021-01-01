@@ -11,7 +11,7 @@ class Repository {
     private val firestore = FirebaseFirestore.getInstance()
     private val citiesCollection = firestore.collection("cities")
 
-    suspend fun getAllCities(): List<CitiesData>{
+    suspend fun getAllCities(): MutableList<CitiesData>{
 //        return try {
 //            citiesCollection.get().await().toObjects(CitiesData::class.java)
 //        }catch (e: Exception){
