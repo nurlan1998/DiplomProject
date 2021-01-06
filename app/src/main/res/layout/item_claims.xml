@@ -8,7 +8,7 @@
         android:id="@+id/item_claims_image_profile"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/icon_profile"
+        android:src="@drawable/iconfinder_avatar"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_width="40dp"

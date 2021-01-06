@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#6177FC</color>
+    <color name="lightGray">#F2F2F2</color>
+    <color name="disabledBtnBg">#999999</color>
 
     <color name="colorText">#FFFFFF</color>
     <color name="colorCap">#9644BD</color>

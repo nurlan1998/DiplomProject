@@ -1,4 +1,4 @@
-package com.nurlan.diplomproject.ui.sub_modules.profile
+package com.nurlan.diplomproject.ui.sub_modules.auth
 
 import android.os.Bundle
 import android.view.View

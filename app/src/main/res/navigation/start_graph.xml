@@ -16,17 +16,18 @@
     </fragment>
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.AuthFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.auth.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" >
         <action
-            android:id="@+id/action_authFragment_to_setProfileFragment"
-            app:destination="@id/setProfileFragment" />
+            android:id="@+id/action_authFragment_to_verifyFragment"
+            app:destination="@id/verifyFragment" />
     </fragment>
     <fragment
         android:id="@+id/setProfileFragment"
-        android:name="com.nurlan.diplomproject.ui.sub_modules.profile.SetProfileFragment"
-        android:label="SetProfileFragment" >
+        android:name="com.nurlan.diplomproject.ui.sub_modules.auth.SetProfileFragment"
+        android:label="SetProfileFragment"
+        tools:layout="@layout/fragment_set_profile">
         <action
             android:id="@+id/action_setProfileFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
@@ -36,4 +37,16 @@
         android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.auth.VerifyFragment"
+        android:label="VerifyFragment"
+        tools:layout="@layout/fragment_verify">
+        <action
+            android:id="@+id/action_verifyFragment_to_setProfileFragment"
+            app:destination="@id/setProfileFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>
