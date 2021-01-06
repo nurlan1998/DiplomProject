@@ -8,10 +8,11 @@ import com.nurlan.diplomproject.adapters.CustomDialogAdapter
 import com.nurlan.diplomproject.data.models.CitiesData
 import com.nurlan.diplomproject.databinding.CustomDialogBinding
 
-class CustomDialog(context: Context,val models:MutableList<CitiesData>): Dialog(context) {
+class CustomDialog(context: Context): Dialog(context) {
 
     private lateinit var mAdapter: CustomDialogAdapter
     private lateinit var binding: CustomDialogBinding
+    lateinit var models:MutableList<CitiesData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

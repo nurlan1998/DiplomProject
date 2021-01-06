@@ -38,16 +38,15 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
 
         val binding = FragmentUserTypeBinding.bind(view)
         setup(binding)
+        var dialog = CustomDialog(requireContext())
         val repository = Repository()
         profileFactory = ProfileFactory(repository)
         profileViewModel = ViewModelProvider(requireActivity(),profileFactory).get(ProfileViewModel::class.java)
         profileViewModel.getAllCities()
         profileViewModel.citiesLiveData.observe(viewLifecycleOwner, Observer {
             Log.i("Cities",it.toString())
-            var dialog = CustomDialog(requireContext(), it as MutableList<CitiesData>)
-//            dialog.getWindow()?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-
+            dialog.models = it as MutableList<CitiesData>
+//            dialog.setCancelable(false)
             dialog.show()
         })
     }
@@ -66,20 +65,6 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
         dialog.setCancelable(true)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(R.layout.custom_dialog)
-
-
-//        val eat = arrayOf("Нукус", "Кунград", "Кегейли", "Ходжели", "Беруний","asdfa","asd","asd")
-//        val dialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
-//        dialog.setTitle("Выберите город или район")
-//        dialog.setItems(eat,DialogInterface.OnClickListener { diaogInterface, i ->
-//            when(i){
-//                0->{
-//                    Toast.makeText(requireContext(), eat[i], Toast.LENGTH_LONG).show()
-//                }
-//            }
-//        })
-//        var builder = dialog.create()
-//        builder.show()
     }
 
     private fun setup(binding: FragmentUserTypeBinding) = with(binding)

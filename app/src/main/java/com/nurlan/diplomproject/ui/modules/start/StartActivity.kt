@@ -23,7 +23,7 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun openSetProfileFragment(){
-        navController.navigate(R.id.action_authFragment_to_setProfileFragment)
+//        navController.navigate(R.id.)
     }
 
     fun openMainGraph(){
