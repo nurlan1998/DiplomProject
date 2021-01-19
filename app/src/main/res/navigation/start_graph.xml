@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/start_graph"
-    app:startDestination="@id/userTypeFragment">
+    app:startDestination="@id/setProfileFragment">
 
     <fragment
         android:id="@+id/userTypeFragment"
@@ -23,6 +23,11 @@
             android:id="@+id/action_authFragment_to_verifyFragment"
             app:destination="@id/verifyFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/setProfileFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.auth.SetProfileFragment"
@@ -32,11 +37,6 @@
             android:id="@+id/action_setProfileFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
     </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/verifyFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.auth.VerifyFragment"

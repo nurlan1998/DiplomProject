@@ -5,7 +5,7 @@
 
     <string name="helper_name">Не менее 3 символов</string>
 
-    <string name="hint_name">Ник</string>
+    <string name="hint_name">Фамилия</string>
     <string name="hint_full_name">Имя</string>
     <string name="hint_sex">Пол</string>
     <string name="hint_city">Город</string>

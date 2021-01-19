@@ -81,18 +81,6 @@
         app:layout_constraintTop_toBottomOf="@+id/otp_text_view" />
 
     <TextView
-        android:id="@+id/tvac_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="TVAC Studio"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/otp_form_feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -108,10 +96,11 @@
     <ProgressBar
         android:id="@+id/otp_progress_bar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/verify_btn"
         app:layout_constraintBottom_toBottomOf="@+id/verify_btn"
         app:layout_constraintEnd_toEndOf="@+id/verify_btn"
         app:layout_constraintTop_toTopOf="@+id/verify_btn"

@@ -32,19 +32,27 @@
 
     </LinearLayout>
 
-<!--    <TextView-->
-<!--        android:id="@+id/fragment_profile_text_name"-->
-<!--        style="@style/CustomText"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginStart="-5dp"-->
-<!--        android:layout_marginLeft="-5dp"-->
-<!--        android:text="\@dem_mort"/>-->
-
     <TextView
         android:id="@+id/fragment_profile_text_full_name"
         style="@style/CustomTextHeading"
         android:layout_marginTop="10dp"
         android:text="Nurlan Ungarbaev"/>
+
+    <TextView
+        android:id="@+id/fragment_profile_text_address"
+        style="@style/CustomText"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:text="Адресс"/>
+
+    <TextView
+        android:id="@+id/fragment_profile_text_phone"
+        style="@style/CustomText"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:text="+998999563884"/>
 
     <TextView
         android:id="@+id/fragment_profile_text_city"

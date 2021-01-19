@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -10,12 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
-            android:src="@drawable/image_call_center"
+            android:id="@+id/ivAts"
             android:layout_width="80dp"
             android:layout_height="80dp"/>
         <TextView
             android:id="@+id/tv_ats_name"
-            android:text="АТС-222"
+            tools:text="АТС-222"
             android:textStyle="bold"
             android:textSize="20sp"
             android:padding="16dp"

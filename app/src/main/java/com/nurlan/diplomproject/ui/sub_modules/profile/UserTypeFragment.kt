@@ -32,6 +32,8 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
 
     private lateinit var profileViewModel: ProfileViewModel
     private lateinit var profileFactory: ProfileFactory
+    private val collectionName = "cities"
+    private val documentName = "name"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,7 +44,7 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
         val repository = Repository()
         profileFactory = ProfileFactory(repository)
         profileViewModel = ViewModelProvider(requireActivity(),profileFactory).get(ProfileViewModel::class.java)
-        profileViewModel.getAllCities()
+        profileViewModel.getAllCities(collectionName, documentName)
         profileViewModel.citiesLiveData.observe(viewLifecycleOwner, Observer {
             Log.i("Cities",it.toString())
             dialog.models = it as MutableList<CitiesData>

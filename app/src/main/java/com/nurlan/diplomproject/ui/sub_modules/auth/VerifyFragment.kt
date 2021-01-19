@@ -29,7 +29,6 @@ class VerifyFragment : Fragment(R.layout.fragment_verify) {
             val credential = PhoneAuthProvider.getCredential(args.id,code)
             FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
                 if(it.isSuccessful){
-                    showToast("Welcome")
                     findNavController().navigate(R.id.action_verifyFragment_to_setProfileFragment)
                 }
             }
