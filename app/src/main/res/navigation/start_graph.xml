@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/start_graph"
-    app:startDestination="@id/setProfileFragment">
+    app:startDestination="@id/userTypeFragment">
 
     <fragment
         android:id="@+id/userTypeFragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_userTypeFragment_to_authFragment"
             app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_userTypeFragment_to_monterFragment"
+            app:destination="@id/monterFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -49,4 +52,9 @@
             android:name="id"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/monterFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.monter.MonterFragment"
+        android:label="fragment_monter"
+        tools:layout="@layout/fragment_monter" />
 </navigation>

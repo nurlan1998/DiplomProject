@@ -75,6 +75,7 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
             findNavController().navigate(R.id.action_userTypeFragment_to_authFragment)
         }
         btnFitter.setOnClickListener {
+            findNavController().navigate(R.id.action_userTypeFragment_to_monterFragment)
         }
     }
 }

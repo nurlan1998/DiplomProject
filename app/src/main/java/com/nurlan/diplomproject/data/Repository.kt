@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.nurlan.diplomproject.data.models.CategoriesData
 import com.nurlan.diplomproject.data.models.CitiesData
+import com.nurlan.diplomproject.data.models.MonterData
 import com.nurlan.diplomproject.data.models.UserData
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
@@ -37,4 +38,24 @@ class Repository {
         }
         return list
     }
+
+    suspend fun getAllItemsMonter(collection0: String,document0: String,subCollection1: String,document1: String,subCollection2: String):MutableList<MonterData>{
+
+        val list = mutableListOf<MonterData>()
+
+        val result = FirebaseFirestore.getInstance()
+            .collection(collection0).document(document0).collection(subCollection1)
+            .document(document1).collection(subCollection2)
+            .get().await()
+        for(documentName in result){
+            val name = documentName.getString("name")
+            val phone = documentName.getString("phone")
+            list.add(MonterData("",name, phone))
+        }
+        return list
+    }
+
+
+
+
 }
