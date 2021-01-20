@@ -1,15 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/item_claims_image_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/iconfinder_avatar"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="16dp" />
     <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/item_claims_tv_name"
+        android:text="Nurlan"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/item_claims_image_profile"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp" />
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/item_claims_tv_phone"
+        android:text="Nurlan"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toEndOf="@id/item_claims_image_profile"
+        app:layout_constraintTop_toBottomOf="@id/item_claims_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/item_claims_tv_task"
+        app:layout_constraintTop_toBottomOf="@id/item_claims_image_profile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="sakjdfhaksjhfkljsdfhkajsdfhkjasdfhnkajdfnkajsdfklajsdfnaksjdlaslaskdjanlksdjfnaksdjaklsjdfalsdfjklaksdjnalksjdfalskdjfn"
+        android:padding="8dp"/>
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintTop_toBottomOf="@id/item_claims_tv_task"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Принять заявку"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,6 +54,4 @@ class MonterFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
-
 }

@@ -55,7 +55,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
     {
         generateBtn.setOnClickListener {
             if(phoneNumberText.text.isEmpty()){
-                loginFormFeedback.text = "Please fill in the form to continue."
+                loginFormFeedback.text = "Пожалуйста введите ваш номер"
                 loginFormFeedback.visibility = View.VISIBLE
             }else{
                 val phone = phoneNumberText.text.toString()
@@ -65,7 +65,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                         .newBuilder(FirebaseAuth.getInstance())
                         .setActivity(requireActivity())
                         .setPhoneNumber(phoneNumber)
-                        .setTimeout(10, TimeUnit.SECONDS)
+                        .setTimeout(5, TimeUnit.SECONDS)
                         .setCallbacks(mCallback)
                         .build()
                 )
