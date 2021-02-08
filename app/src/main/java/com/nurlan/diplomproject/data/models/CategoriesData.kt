@@ -1,6 +1,13 @@
 package com.nurlan.diplomproject.data.models
 
 data class CategoriesData(
-        var id: Int,
-        var ats: String
-)
+//        val id: Int,
+        var idName: String? = "222",
+        var atsName: String? = "АТС-222"
+){
+        private var _claims: MutableList<ClaimData> = mutableListOf()
+
+        var claims: MutableList<ClaimData>
+        get() {return _claims}
+        set(value) {_claims = value}
+}

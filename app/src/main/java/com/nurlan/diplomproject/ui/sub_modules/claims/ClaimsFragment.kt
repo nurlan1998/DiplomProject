@@ -10,24 +10,39 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nurlan.diplomproject.R
 import com.nurlan.diplomproject.adapters.ClaimsAdapter
+import com.nurlan.diplomproject.data.Repository
 import com.nurlan.diplomproject.databinding.FragmentClaimsBinding
+import com.nurlan.diplomproject.ui.sub_modules.monter.MonterFactroy
+import com.nurlan.diplomproject.ui.sub_modules.monter.MonterViewModel
+import com.nurlan.diplomproject.ui.sub_modules.profile.ProfileFactory
+import com.nurlan.diplomproject.ui.sub_modules.profile.ProfileViewModel
 
 class ClaimsFragment : Fragment(R.layout.fragment_claims) {
 
     private lateinit var mClaimViewModel: ClaimsViewModel
     private lateinit var mAdapter: ClaimsAdapter
+    private lateinit var monterViewModel: MonterViewModel
+    private lateinit var monterFactroy: MonterFactroy
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         mAdapter = ClaimsAdapter()
 
-        mClaimViewModel = ViewModelProvider(requireActivity()).get(ClaimsViewModel::class.java)
-        mClaimViewModel.startViewModel()
-        mClaimViewModel.claimsLiveData.observe(viewLifecycleOwner, Observer {
+        val repository = Repository()
+        monterFactroy = MonterFactroy(repository)
+        monterViewModel = ViewModelProvider(requireActivity(),monterFactroy).get(MonterViewModel::class.java)
+        monterViewModel.getAllItemsMonter("cities","nukus","ats","222","222")
+        monterViewModel.monterLiveData.observe(viewLifecycleOwner, Observer {
             mAdapter.models = it
-            Log.i("Response",it.toString())
         })
+//
+//        mClaimViewModel = ViewModelProvider(requireActivity()).get(ClaimsViewModel::class.java)
+//        mClaimViewModel.startViewModel()
+//        mClaimViewModel.claimsLiveData.observe(viewLifecycleOwner, Observer {
+//            mAdapter.models = it
+//            Log.i("Response",it.toString())
+//        })
 
         val binding = FragmentClaimsBinding.bind(view)
         setup(binding)

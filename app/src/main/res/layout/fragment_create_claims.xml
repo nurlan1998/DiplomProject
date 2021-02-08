@@ -15,7 +15,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fragment_create_claims_full_name"
-            style="@style/CustomEditText"
+            style="@style/CustomEditTextBlack"
             android:layout_marginTop="20dp"
             app:endIconMode="clear_text"
             app:counterEnabled="true"
@@ -25,14 +25,14 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_create_claims_edit_text_full_name"
-                style="@style/CustomEditText"
+                style="@style/CustomEditTextBlack"
                 android:backgroundTint="@color/white"
                 android:imeOptions="actionDone"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fragment_create_claims_phone"
-            style="@style/CustomEditText"
+            style="@style/CustomEditTextBlack"
             android:layout_marginTop="20dp"
             app:endIconMode="clear_text"
             app:counterEnabled="true"
@@ -42,7 +42,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_create_claims_edit_text_phone"
-                style="@style/CustomEditText"
+                style="@style/CustomEditTextBlack"
                 android:backgroundTint="@color/white"
                 android:imeOptions="actionDone"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -72,7 +72,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fragment_create_claims_address"
-            style="@style/CustomEditText"
+            style="@style/CustomEditTextBlack"
             android:layout_marginTop="20dp"
             app:endIconMode="clear_text"
             app:counterEnabled="true"
@@ -82,7 +82,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_create_claims_edit_text_address"
-                style="@style/CustomEditText"
+                style="@style/CustomEditTextBlack"
                 android:backgroundTint="@color/white"
                 android:imeOptions="actionDone"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,11 +91,11 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/fragment_create_claims_button_place"
         style="@style/CustomButton"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:text="Разместить заявку"/>
+        android:text="Разместить заявку" />
 
 </RelativeLayout>

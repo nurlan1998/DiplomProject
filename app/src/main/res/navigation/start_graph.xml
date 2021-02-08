@@ -23,6 +23,11 @@
             android:id="@+id/action_authFragment_to_verifyFragment"
             app:destination="@id/verifyFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/setProfileFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.auth.SetProfileFragment"
@@ -31,12 +36,10 @@
         <action
             android:id="@+id/action_setProfileFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_setProfileFragment_to_monterFragment"
+            app:destination="@id/monterFragment" />
     </fragment>
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.nurlan.diplomproject.ui.modules.main.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/verifyFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.auth.VerifyFragment"
@@ -49,4 +52,9 @@
             android:name="id"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/monterFragment"
+        android:name="com.nurlan.diplomproject.ui.sub_modules.monter.MonterFragment"
+        android:label="fragment_monter"
+        tools:layout="@layout/fragment_monter" />
 </navigation>

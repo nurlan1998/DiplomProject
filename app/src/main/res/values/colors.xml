@@ -10,6 +10,7 @@
     <color name="colorPrimary">#6177FC</color>
     <color name="lightGray">#F2F2F2</color>
     <color name="disabledBtnBg">#999999</color>
+    <color name="colorBlue">#479EFF</color>
 
     <color name="colorText">#FFFFFF</color>
     <color name="colorCap">#9644BD</color>

@@ -32,7 +32,9 @@
         android:id="@+id/createClaimsFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.create_claims.CreateClaimsFragment"
         android:label="fragment_create_claims"
-        tools:layout="@layout/fragment_create_claims" />
+        tools:layout="@layout/fragment_create_claims" >
+        <argument android:name="id_ats" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.nurlan.diplomproject.ui.sub_modules.profile.ProfileFragment"
