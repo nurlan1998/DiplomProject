@@ -1,9 +1,10 @@
 package com.nurlan.diplomproject.data.models
 
 data class ClaimData(
-        var id: Int? = 0,
-        var name:String? = "asd",
-        var phone: String? = "asd",
-        var image: String? = "asd",
-        var task: String? = "asd"
+        var id: String? = "",
+        var name:String? = "",
+        var phone: String? = "",
+        var image: String? = "",
+        var selectClaim: Boolean = false,
+        var task: String? = ""
 )

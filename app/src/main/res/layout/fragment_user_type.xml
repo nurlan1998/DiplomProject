@@ -7,32 +7,108 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.sub_modules.profile.UserTypeFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fragment_user_type_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?android:attr/windowBackground"
+        android:backgroundTint="#479EFF"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Сервис подача заявок"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/iv_welcome"
+        android:src="@drawable/ic_uzonline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_user_type_toolbar"
+        app:layout_constraintBottom_toTopOf="@id/tv_welcome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:text="   Сервис подача заявок\n Твой мобильный помощник\n   на все случаи жизни!\n\n Найди заявок или подай заявок\n   в несколько кликов"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_welcome"
+        app:layout_constraintBottom_toTopOf="@id/fragment_user_type_tv_question"
+        android:layout_marginBottom="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/fragment_user_type_tv_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Выберите ваш город"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/fragment_user_type_select_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/fragment_user_type_select_city"
+        app:layout_constraintBottom_toTopOf="@id/btn_subscriber"
+        android:layout_marginBottom="64dp"
+        tools:text="Nukus"
+        android:textColor="#29b6f6"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_subscriber"
-        android:text="Абонент"
+        android:text="Я абонент"
+        android:textAllCaps="false"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_fitter"
         android:padding="16dp"
-        android:backgroundTint="@color/teal_700"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/teal_200"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_fitter"
-        android:text="Монтер"
-        android:backgroundTint="@color/teal_700"
+        android:text="Я монтер"
+        android:backgroundTint="@color/teal_200"
+        android:textAllCaps="false"
         android:textStyle="bold"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="16dp"
+        android:textColor="@color/black"
         android:layout_marginBottom="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

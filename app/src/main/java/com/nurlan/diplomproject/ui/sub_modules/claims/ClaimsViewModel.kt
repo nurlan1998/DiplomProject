@@ -14,7 +14,7 @@ class ClaimsViewModel: ViewModel() {
         {
             if(i==0) {
                 val claim = ClaimData(
-                    id = i,
+                    id = i.toString(),
                     name = "nurlan",
                     phone = "+998999563884",
                     image = "",
@@ -24,7 +24,7 @@ class ClaimsViewModel: ViewModel() {
             }
             if(i==1) {
                 val claim = ClaimData(
-                    id = i,
+                    id = i.toString(),
                     name = "nurlan",
                     phone = "+998999563884",
                     image = "",
@@ -34,7 +34,7 @@ class ClaimsViewModel: ViewModel() {
             }
             if(i==2) {
                 val claim = ClaimData(
-                    id = i,
+                    id = i.toString(),
                     name = "nurlan",
                     phone = "+998999563884",
                     image = "",

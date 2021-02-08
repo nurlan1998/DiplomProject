@@ -14,6 +14,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -22,7 +23,9 @@ import com.nurlan.diplomproject.adapters.CustomDialogAdapter
 import com.nurlan.diplomproject.data.CustomDialog
 import com.nurlan.diplomproject.data.Repository
 import com.nurlan.diplomproject.data.models.CitiesData
+import com.nurlan.diplomproject.data.utils.showToast
 import com.nurlan.diplomproject.databinding.FragmentUserTypeBinding
+import com.nurlan.diplomproject.ui.sub_modules.base.ShareViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -32,8 +35,14 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
 
     private lateinit var profileViewModel: ProfileViewModel
     private lateinit var profileFactory: ProfileFactory
+    private val shareViewModel: ShareViewModel by activityViewModels()
     private val collectionName = "cities"
     private val documentName = "name"
+
+    companion object{
+        const val SUBSCRIBER = "subscriber"
+        const val FITTER = "fitter"
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,6 +50,7 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
         val binding = FragmentUserTypeBinding.bind(view)
         setup(binding)
         var dialog = CustomDialog(requireContext())
+        dialog.mAdapter = CustomDialogAdapter()
         val repository = Repository()
         profileFactory = ProfileFactory(repository)
         profileViewModel = ViewModelProvider(requireActivity(),profileFactory).get(ProfileViewModel::class.java)
@@ -48,7 +58,8 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
         profileViewModel.citiesLiveData.observe(viewLifecycleOwner, Observer {
             Log.i("Cities",it.toString())
             dialog.models = it as MutableList<CitiesData>
-//            dialog.setCancelable(false)
+            dialog.setTitle("Выберите ваш город или район")
+            dialog.setCancelable(false)
             dialog.show()
         })
     }
@@ -72,10 +83,12 @@ class UserTypeFragment : Fragment(R.layout.fragment_user_type) {
     private fun setup(binding: FragmentUserTypeBinding) = with(binding)
     {
         btnSubscriber.setOnClickListener {
+            shareViewModel.updateData(SUBSCRIBER)
             findNavController().navigate(R.id.action_userTypeFragment_to_authFragment)
         }
         btnFitter.setOnClickListener {
-            findNavController().navigate(R.id.action_userTypeFragment_to_monterFragment)
+            shareViewModel.updateData(FITTER)
+            findNavController().navigate(R.id.action_userTypeFragment_to_authFragment)
         }
     }
 }

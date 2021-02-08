@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_userTypeFragment_to_authFragment"
             app:destination="@id/authFragment" />
-        <action
-            android:id="@+id/action_userTypeFragment_to_monterFragment"
-            app:destination="@id/monterFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -39,6 +36,9 @@
         <action
             android:id="@+id/action_setProfileFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_setProfileFragment_to_monterFragment"
+            app:destination="@id/monterFragment" />
     </fragment>
     <fragment
         android:id="@+id/verifyFragment"

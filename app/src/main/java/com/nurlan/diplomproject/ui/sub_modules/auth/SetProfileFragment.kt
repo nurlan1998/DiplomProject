@@ -5,18 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.nurlan.diplomproject.R
 import com.nurlan.diplomproject.data.utils.showToast
 import com.nurlan.diplomproject.databinding.FragmentSetProfileBinding
+import com.nurlan.diplomproject.ui.sub_modules.base.ShareViewModel
+import com.nurlan.diplomproject.ui.sub_modules.profile.UserTypeFragment.Companion.FITTER
+import com.nurlan.diplomproject.ui.sub_modules.profile.UserTypeFragment.Companion.SUBSCRIBER
 
 class SetProfileFragment : Fragment(R.layout.fragment_set_profile) {
 
     private var _binding: FragmentSetProfileBinding? = null
 
     private val binding get() = _binding!!
+
+    private val shareViewModel: ShareViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +57,15 @@ class SetProfileFragment : Fragment(R.layout.fragment_set_profile) {
             db.collection("cities").document("nukus").collection("users").document(currentUser!!)
                 .set(user).addOnSuccessListener {
                     showToast("Success")
-                    findNavController().navigate(R.id.action_setProfileFragment_to_mainActivity)
+                    shareViewModel.dataToShare.observe(viewLifecycleOwner, Observer {
+                        if(it == SUBSCRIBER){
+                            findNavController().navigate(R.id.action_setProfileFragment_to_mainActivity)
+                        }else{
+                            if(it == FITTER){
+                                findNavController().navigate(R.id.action_setProfileFragment_to_monterFragment)
+                            }
+                        }
+                    })
                 }
                 .addOnFailureListener {
                     showToast("Error")

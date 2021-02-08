@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nurlan.diplomproject.R
+import com.nurlan.diplomproject.data.models.CategoriesData
 import com.nurlan.diplomproject.data.models.CitiesData
 import com.nurlan.diplomproject.databinding.ItemCustomDialogBinding
 
@@ -15,6 +16,12 @@ class CustomDialogAdapter: RecyclerView.Adapter<CustomDialogAdapter.CustomDialog
     fun setData(data: MutableList<CitiesData>){
         models = data
         notifyDataSetChanged()
+    }
+
+    private lateinit var itemClick: (CitiesData) -> Unit
+
+    fun setItemClickDialog(itemClick: (model: CitiesData) -> Unit){
+        this.itemClick = itemClick
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomDialogViewHolder {
@@ -33,6 +40,9 @@ class CustomDialogAdapter: RecyclerView.Adapter<CustomDialogAdapter.CustomDialog
 
         fun bind(citiesData: CitiesData){
             name.text = citiesData.name
+            itemView.setOnClickListener {
+                itemClick.invoke(citiesData)
+            }
         }
     }
 

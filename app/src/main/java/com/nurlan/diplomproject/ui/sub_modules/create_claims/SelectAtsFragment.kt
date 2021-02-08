@@ -58,7 +58,8 @@ class SelectAtsFragment : Fragment(R.layout.fragment_ats) {
         })
 
         mAdapter.setItemClick {
-            findNavController().navigate(R.id.action_selectAtsFragment_to_createClaimsFragment2)
+            val action = SelectAtsFragmentDirections.actionSelectAtsFragmentToCreateClaimsFragment2(it.idName!!)
+            findNavController().navigate(action)
         }
     }
 }

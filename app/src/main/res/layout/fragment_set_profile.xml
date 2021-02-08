@@ -51,7 +51,6 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_set_profile_edit_text_name"
                 style="@style/CustomEditText"
-                android:digits="@string/digit_english_num"
                 android:imeOptions="actionDone|flagForceAscii"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -105,7 +104,6 @@
             style="@style/CustomButton"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/open_sans_semibold"
-            android:textColor="@android:color/background_light"
             android:text="@string/text_sign_in"/>
 
     </LinearLayout>

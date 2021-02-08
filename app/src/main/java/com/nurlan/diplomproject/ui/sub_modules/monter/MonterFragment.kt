@@ -6,14 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
-import com.nurlan.diplomproject.R
+import com.google.firebase.firestore.FirebaseFirestore
 import com.nurlan.diplomproject.adapters.MonterAdapter
 import com.nurlan.diplomproject.data.Repository
+import com.nurlan.diplomproject.data.models.ClaimData
 import com.nurlan.diplomproject.data.utils.showToast
 import com.nurlan.diplomproject.databinding.FragmentMonterBinding
+import com.nurlan.diplomproject.ui.sub_modules.base.ShareViewModel
+import com.nurlan.diplomproject.ui.sub_modules.profile.ProfileFactory
+import com.nurlan.diplomproject.ui.sub_modules.profile.ProfileViewModel
 
 
 class MonterFragment : Fragment() {
@@ -22,6 +26,7 @@ class MonterFragment : Fragment() {
     private lateinit var mAdapter:MonterAdapter
     private lateinit var monterViewModel: MonterViewModel
     private lateinit var monterFactroy: MonterFactroy
+    private val model: ShareViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +35,21 @@ class MonterFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentMonterBinding.inflate(layoutInflater, container, false)
         return mBinding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mAdapter.setItemClick {
+            if(!it.selectClaim){
+                it.selectClaim = true
+                showToast("Заявка принята")
+                update(it)
+            }else{
+                it.selectClaim = false
+                showToast("Заявка отклонена")
+                update(it)
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,6 +68,18 @@ class MonterFragment : Fragment() {
         monterViewModel.monterLiveData.observe(viewLifecycleOwner, Observer {
             mAdapter.model = it
         })
+    }
+    fun update(claim: ClaimData){
+        var db = FirebaseFirestore.getInstance()
+
+            var monter = db.collection("cities").document("nukus")
+                .collection("ats").document("222")
+                .collection("222").document(claim.id.toString())
+            monter.update(
+                "selectClaim",claim.selectClaim
+            ).addOnSuccessListener {
+
+            }
     }
 
     override fun onDestroy() {

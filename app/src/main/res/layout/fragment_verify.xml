@@ -65,33 +65,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/verify_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/primary_btn_bg"
-        android:fontFamily="@font/open_sans_semibold"
         android:text="Подтверждения номера"
         android:textAllCaps="false"
-        android:textColor="@android:color/background_light"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/otp_text_view" />
-
-    <TextView
-        android:id="@+id/otp_form_feedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        style="@style/CustomButton"
+        app:layout_constraintTop_toBottomOf="@id/otp_text_view"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Working . . ."
-        android:textColor="@android:color/holo_red_light"
-        android:visibility="invisible"
+        android:fontFamily="@font/open_sans_semibold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verify_btn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
         android:id="@+id/otp_progress_bar"

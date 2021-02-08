@@ -19,6 +19,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
     private lateinit var mCallback: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     private lateinit var mAuth: FirebaseAuth
     private var mCodeId: String? = null
+    private var TAG = "AuthFragment"
 
     override fun onStart() {
         super.onStart()
@@ -27,12 +28,16 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                 FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
                     if(it.isSuccessful){
                         showToast("Welcome")
-                    }else showToast(it.exception?.message.toString())
+                    }else{
+                        showToast(it.exception?.message.toString())
+                        Log.i(TAG,it.exception?.message.toString())
+                    }
                 }
             }
 
             override fun onVerificationFailed(p0: FirebaseException) {
                 showToast(p0.message.toString())
+                Log.i(TAG,p0.message.toString())
             }
 
             override fun onCodeSent(id: String, token: PhoneAuthProvider.ForceResendingToken) {
@@ -65,7 +70,7 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                         .newBuilder(FirebaseAuth.getInstance())
                         .setActivity(requireActivity())
                         .setPhoneNumber(phoneNumber)
-                        .setTimeout(5, TimeUnit.SECONDS)
+                        .setTimeout(10, TimeUnit.SECONDS)
                         .setCallbacks(mCallback)
                         .build()
                 )

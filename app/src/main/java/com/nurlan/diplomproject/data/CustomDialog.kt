@@ -3,14 +3,16 @@ package com.nurlan.diplomproject.data
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import com.nurlan.diplomproject.R
 import com.nurlan.diplomproject.adapters.CustomDialogAdapter
 import com.nurlan.diplomproject.data.models.CitiesData
+import com.nurlan.diplomproject.data.utils.showToast
 import com.nurlan.diplomproject.databinding.CustomDialogBinding
 
 class CustomDialog(context: Context): Dialog(context) {
 
-    private lateinit var mAdapter: CustomDialogAdapter
+    lateinit var mAdapter: CustomDialogAdapter
     private lateinit var binding: CustomDialogBinding
     lateinit var models:MutableList<CitiesData>
 
@@ -21,5 +23,8 @@ class CustomDialog(context: Context): Dialog(context) {
         mAdapter = CustomDialogAdapter()
         binding.rvCustomDialog.adapter = mAdapter
         mAdapter.models = models
+        mAdapter.setItemClickDialog {
+            dismiss()
+        }
     }
 }
