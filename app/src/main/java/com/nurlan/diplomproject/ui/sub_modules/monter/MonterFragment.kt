@@ -78,7 +78,6 @@ class MonterFragment : Fragment() {
             monter.update(
                 "selectClaim",claim.selectClaim
             ).addOnSuccessListener {
-
             }
     }
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.nurlan.diplomproject.R
 import com.nurlan.diplomproject.databinding.ActivityStartBinding
 import com.nurlan.diplomproject.ui.modules.main.MainActivity
@@ -20,6 +22,17 @@ class StartActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navController = Navigation.findNavController(this,R.id.activity_start_nav_container)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        FirebaseAuth.getInstance().addAuthStateListener {
+            if(it.currentUser == null){
+            }else{
+                openMainGraph()
+                finish()
+            }
+        }
     }
 
     fun openSetProfileFragment(){

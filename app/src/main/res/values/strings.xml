@@ -9,7 +9,7 @@
     <string name="hint_full_name">Имя</string>
     <string name="hint_sex">Пол</string>
     <string name="hint_city">Город</string>
-    <string name="hint_address">Адресс</string>
+    <string name="hint_address">Адрес</string>
     <string name="hint_birthday">Дата рождения</string>
     <string name="hint_description">Описание</string>
 

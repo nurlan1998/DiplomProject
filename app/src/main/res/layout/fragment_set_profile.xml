@@ -59,7 +59,7 @@
             android:id="@+id/fragment_set_profile_form_sex"
             style="@style/CustomFormSpinner"
             android:layout_marginTop="10dp"
-            android:hint="@string/hint_sex">
+            android:hint="@string/hint_city">
 
             <AutoCompleteTextView
                 style="@style/CustomSpinner"
@@ -77,25 +77,6 @@
                 android:id="@+id/fragment_set_profile_edit_text_address"
                 style="@style/CustomEditText"
                 android:imeOptions="actionDone"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/fragment_set_profile_form_birthday"
-            style="@style/CustomFormSpinner"
-            android:layout_marginTop="10dp"
-            app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconMode="custom"
-            app:counterEnabled="true"
-            android:hint="@string/hint_birthday">
-
-            <AutoCompleteTextView
-                android:id="@+id/fragment_set_profile_edit_text_birthday"
-                style="@style/CustomEditText"
-                android:imeOptions="actionDone"
-                android:focusable="false"
-                android:clickable="true"
-                android:inputType="none"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
